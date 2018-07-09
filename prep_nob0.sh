@@ -6,7 +6,7 @@ module load fsl/5.0.10
 module load mricron
 
 #loops through listed subjects
-for a in $a
+for a in <subject list>
 do
 
 #create directories
