@@ -8,15 +8,7 @@ module load mricrogl
 #loops through listed subjects
 for a in <subjects>
 
-#removes old directories and outputs
-#    rm -r $a/scripts/
-#    rm -r $a/dmri/
-#    rm -r $a/dlabel/
-#    rm $a/*.sh
-#    rm $a/*.out
-
 #create directories
-#    mkdir tracula/$a/
     mkdir $a/scripts/
     mkdir $a/dmri/
     mkdir $a/dmri/xfms
@@ -29,13 +21,13 @@ for a in <subjects>
     echo "directories created for " $a
 
 #Convert the input DWI files to NIfTI, using dcm2niix and move to appropriate directories 
-#  dcm2niix DTI/$a/
-#  mv DTI/$a/*_WIP_64_dir_DT_2PACKAGES_*.nii DTI/$a/64dir.nii
-#  mv DTI/$a/*_WIP_64_dir_DT_2PACKAGES_*.bval DTI/$a/64dir.bvals
-#  mv DTI/$a/*_WIP_64_dir_DT_2PACKAGES_*.bvec DTI/$a/64dir.bvecs
-#  cp DTI/$a/64dir.nii tracula/$a/dmri/
-#  cp DTI/$a/64dir.bvals $a/dmri/
-#  cp DTI/$a/64dir.bvecs tracula/$a/dmri/
+  dcm2niix DTI/$a/
+  mv DTI/$a/*_WIP_64_dir_DT_2PACKAGES_*.nii DTI/$a/64dir.nii
+  mv DTI/$a/*_WIP_64_dir_DT_2PACKAGES_*.bval DTI/$a/64dir.bvals
+  mv DTI/$a/*_WIP_64_dir_DT_2PACKAGES_*.bvec DTI/$a/64dir.bvecs
+  cp DTI/$a/64dir.nii tracula/$a/dmri/
+  cp DTI/$a/64dir.bvals $a/dmri/
+  cp DTI/$a/64dir.bvecs tracula/$a/dmri/
   cp $a/64dir.nii $a/dmri/64dir.nii
   cp $a/64dir.bvals $a/dmri/64dir.bvals
   cp $a/64dir.bvecs $a/dmri/64dir.bvecs
