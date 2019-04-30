@@ -13,6 +13,6 @@ pwd; hostname; date
 module load freesurfer/6.0.0 
 module load fsl/5.0.10
  
-trac-all -stat -c tracall_stat.txt -no-isrunning
+trac-all -stat -c tracula_config.txt -no-isrunning
 
 date
